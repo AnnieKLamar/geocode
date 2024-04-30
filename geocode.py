@@ -35,8 +35,8 @@ def get_wiki_coordinates(location, site, logging):
     :param logging: if True include print statements
     :return: a tuple with coordinates
 
-    Returns -100000, -100000 if page contains no geographic coordinates.
-    Returns -200000, -200000 if no such Wikipedia page exists.
+    Returns -1000, -1000 if page contains no geographic coordinates.
+    Returns -2000, -2000 if no such Wikipedia page exists.
     """
 
     try:  # does direct link to page exist
@@ -51,7 +51,7 @@ def get_wiki_coordinates(location, site, logging):
         else:
             if logging:
                 print("No geographic data for", location)
-            return -100000, -100000
+            return -1000, -1000
     except:  # do we need to use a redirected page
         try:
             redirect_page = pywikibot.Page(site, location).getRedirectTarget()
@@ -65,11 +65,11 @@ def get_wiki_coordinates(location, site, logging):
             else:
                 if logging:
                     print("No geographic data for ", location)
-                return -100000, -100000
+                return -1000, -1000
         except:
             if logging:
                 print("No English Wikipedia page exists for ", location)
-            return -200000, -200000
+            return -2000, -2000
 
 
 def main():

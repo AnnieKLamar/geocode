@@ -21,7 +21,7 @@ unzip /scratch/users/$USER/stanford-corenlp-4.5.5.zip -d /scratch/users/$USER
 cd /scratch/users/$USER/stanford-corenlp-4.5.5
 echo -e "\nCollecting extra models for wikification... \n"
 wget https://huggingface.co/stanfordnlp/corenlp-english-kbp/resolve/main/stanford-corenlp-models-english-kbp.jar https://huggingface.co/stanfordnlp/corenlp-english-extra/resolve/main/stanford-corenlp-models-english-extra.jar -P /scratch/users/$USER/stanford-corenlp-4.5.5/
-# unzip all downloaded modules and re-zip them togetherd
+# unzip all downloaded modules and re-zip them together
 unzip -o /scratch/users/$USER/stanford-corenlp-4.5.5/stanford-corenlp-models-english-extra.jar -d /scratch/users/$USER/stanford-corenlp.4.5.5/
 unzip -o /scratch/users/$USER/stanford-corenlp-4.5.5/stanford-corenlp-models-english-kbp.jar -d /scratch/users/$USER/stanford-corenlp.4.5.5/
 zip /scratch/users/$USER/stanford-corenlp.4.5.5/stanford-corenlp-4.5.5-models.jar /scratch/users/$USER/stanford-corenlp.4.5.5/stanford-corenlp-4.5.5-models.jar /scratch/users/$USER/stanford-corenlp.4.5.5/stanford-corenlp-models-english-extra.jar /scratch/users/$USER/stanford-corenlp.4.5.5/stanford-corenlp-models-english-kbp.jar
